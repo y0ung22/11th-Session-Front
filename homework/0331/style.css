@@ -23,6 +23,9 @@ span {
 .metadata {
   padding-left: 10px;
 }
+.titleAndButton {
+  display: flex;
+}
 .data {
   margin-bottom: 50px;
 }
