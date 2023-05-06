@@ -9,8 +9,8 @@ const init = () => {
 
 const displayForm = () => {
   form.style.display === "none"
-  ? (form.style.display = "block")
-  : (form.style.display = "none");
+    ? (form.style.display = "block")
+    : (form.style.display = "none");
 };
 
 const addTodoItem = () => {
@@ -48,7 +48,7 @@ const deleteTodoItem = (e) => {
   document.querySelector(".todo-list").removeChild(target);
 };
 
-const toggleTodoToDone = (e) =>  {
+const toggleTodoToDone = (e) => {
   deleteTodoItem(e);
   printDoneItem(e.target.innerText);
 };
