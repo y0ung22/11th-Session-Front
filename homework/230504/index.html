@@ -4,30 +4,57 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Todo List</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
       <div class="header" id="box">
         <h2>안녕하세요! 투두리스트입니다. 당신의 할 일을 작성해보세요 😉</h2>
-        <button class="input-btn">입력창 불러오기</button>
+        <img class="arrow" src="arrow.png" />
+        <button class="popup-btn">입력창 불러오기</button>
+        <div id="input-box">
+          <form class="todo-form">
+            <input class="todo-input" placeholder="할 일 작성하기" />
+            <input type="submit" hidden="true" />
+          </form>
+        </div>
       </div>
       <div class="main">
         <div class="calendar" id="box">
-          <h2 class="title">2023.05.19</h2>
+          <h2 class="title">2023.05.16</h2>
+          <img class="calendar-img" src="calendar.png" />
         </div>
         <div class="list" id="box">
           <div class="todo">
             <h2 class="title">What I have to do</h2>
-            <div id="input-box">
-              <input class="todo-input" placeholder="할 일 작성하기" />
-            </div>
-            <ul class="todo-list"></ul>
+            <ul class="todo-list">
+              <li>
+                <button class="todo-click">
+                  <img src="empty-check.png" />
+                </button>
+                <span>대영 팀플 사례조사</span>
+                <button class="close"><img src="close.png" /></button>
+              </li>
+              <li>
+                <button class="todo-click">
+                  <img src="empty-check.png" />
+                </button>
+                <span>통글 중간 보고서 작성</span>
+                <button class="close"><img src="close.png" /></button>
+              </li>
+            </ul>
           </div>
           <div class="done">
             <h2 class="title">What I did</h2>
-            <ul class="todo-list"></ul>
+            <ul class="done-list">
+              <li>
+                <button class="done-btn"><img src="full-check.png" /></button>
+                <span>기세 중간 보고서 작성</span>
+                <button class="up"><img src="up.png" /></button>
+                <button class="close"><img src="close.png" /></button>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 body {
   padding: 30px;
   justify-content: flex-start;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 header {
   padding: 20px;
@@ -35,7 +35,7 @@ span {
 .recommend {
   padding: 10px;
   position: relative;
-  top: -300px
+  top: -300px;
 }
 .logo span {
   background-color: rgb(233, 233, 233);
@@ -50,7 +50,7 @@ span {
 }
 .profile-img {
   width: 50px;
-  height: 50px; 
+  height: 50px;
   border-radius: 70%;
   overflow: hidden;
 }
@@ -69,7 +69,7 @@ span {
 }
 .videoTitle {
   font-size: x-large;
-  font-weight:bold;
+  font-weight: bold;
 }
 .youtuber {
   color: darkgray;
@@ -100,7 +100,7 @@ span {
 }
 .comments {
   display: flex;
-  justify-content: flex-start; 
+  justify-content: flex-start;
 }
 .contain {
   flex-grow: 1;
@@ -133,7 +133,8 @@ span {
 li {
   list-style: none;
 }
-button, button:focus {
+button,
+button:focus {
   border: none;
   outline: none;
   background-color: white;
