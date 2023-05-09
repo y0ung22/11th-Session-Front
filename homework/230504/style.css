@@ -20,6 +20,10 @@
   left: 1070px;
 }
 
+.todo-form {
+  display: none;
+}
+
 .calendar {
   margin-right: 66px;
   height: 800px;
@@ -87,7 +91,7 @@ input {
   padding-right: 20px;
 }
 
-.popup-btn {
+#popup-btn {
   position: absolute;
   left: 2170px;
   top: 128px;
@@ -101,22 +105,22 @@ li {
   display: flex;
 }
 
-.todo-click {
+#todo-click {
   padding-right: 25px;
   display: flex;
   align-items: center;
 }
 
-.done-btn {
+#done-btn {
   padding-right: 25px;
 }
 
-.close {
+#del {
   padding-left: 10px;
   display: flex;
 }
 
-.up {
+#up {
   padding-left: 10px;
   padding-right: 0;
   display: flex;
