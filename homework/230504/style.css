@@ -60,6 +60,7 @@ span {
   font-size: 34px;
   display: flex;
   align-items: center;
+  padding-left: 25px;
 }
 
 .title {
@@ -106,13 +107,8 @@ li {
 }
 
 #todo-click {
-  padding-right: 25px;
   display: flex;
   align-items: center;
-}
-
-#done-btn {
-  padding-right: 25px;
 }
 
 #del {

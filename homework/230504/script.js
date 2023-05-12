@@ -32,10 +32,6 @@ const printTodoItem = (text) => {
   const todoText = document.createElement("span");
   const todoDel = document.createElement("button");
 
-  //버튼에 id 추가
-  todoBtn.setAttribute("id", "todo-click");
-  todoDel.setAttribute("id", "del");
-
   //img 태그 추가 >> src 설정 >> Btn에 자식 노드로 추가
   const todoBtn_img = document.createElement("img");
   const todoDel_img = document.createElement("img");
@@ -44,15 +40,18 @@ const printTodoItem = (text) => {
   todoBtn.appendChild(todoBtn_img);
   todoDel.appendChild(todoDel_img);
 
-  //todo 목록 내용
+  //todo 목록 내용 추가
   todoText.innerText = text;
-  todoText.className = "todo-text";
+  todoText.setAttribute("id", "todo-text");
+
+  //버튼에 id 추가
+  todoBtn.setAttribute("id", "todo-click");
+  todoDel.setAttribute("id", "del");
 
   //todo 목록의 내용을 done으로 이동시키기
   todoBtn.addEventListener("click", toggleTodoToDone);
 
   //todo 목록 삭제 버튼
-  todoDel.className = "del-btn";
   todoDel.addEventListener("click", deleteTodoItem);
 
   //li에 item(button, span, button) 추가한 후 ul에 li appendChild하기
@@ -68,14 +67,15 @@ const printTodoItem = (text) => {
 
 //todo 목록 삭제하기 >> todoDel의 부모인 todoItem 삭제
 const deleteTodoItem = (e) => {
-  const target = e.target.parentNode;
+  const target = e.target.parentNode.parentNode;
   document.querySelector(".todo-list").removeChild(target);
 };
 
-//todo 목록의 할 일을 완수했다면 >> todo 목록에서 삭제한 후 done 목록에 집어넣기
+//todo 목록의 할 일을 완수했다면 >> todo 목록에서 삭제한 후 text를 done 목록에 집어넣기
 const toggleTodoToDone = (e) => {
+  const target = document.getElementById("todo-text").innerHTML;
   deleteTodoItem(e);
-  printDoneItem(e.target.innerText);
+  printDoneItem(target);
 };
 
 //Done 목록에 todo 항목 추가하는 함수
@@ -93,19 +93,20 @@ const printDoneItem = (text) => {
   doneBtn_img.setAttribute("src", "full-check.png");
   doneUp_img.setAttribute("src", "up.png");
   doneDel_img.setAttribute("src", "close.png");
-  todoBtn.appendChild(todoBtn_img);
+  doneBtn.appendChild(doneBtn_img);
   doneUp.appendChild(doneUp_img);
-  todoDel.appendChild(todoDel_img);
+  doneDel.appendChild(doneDel_img);
 
   //done 목록 내용
   doneText.innerText = text;
-  doneText.className = "done-item-text";
+  doneText.setAttribute("id", "done-text");
 
   //done 목록의 내용을 todo로 이동시키기
+  doneUp.setAttribute("id", "up");
   doneUp.addEventListener("click", toggleDoneTodo);
 
   //done 목록 삭제 버튼
-  doneDel.className = "del-btn";
+  doneDel.setAttribute("id", "del");
   doneDel.addEventListener("click", deleteDoneItem);
 
   //li에 item(button, span, button) 추가한 후 ul에 li appendChild하기
@@ -119,14 +120,15 @@ const printDoneItem = (text) => {
 
 //done 목록 삭제하기 >> doneDel의 부모인 doneItem 삭제
 const deleteDoneItem = (e) => {
-  const target = e.target.parentNode;
+  const target = e.target.parentNode.parentNode;
   document.querySelector(".done-list").removeChild(target);
 };
 
 //버튼 누르면 done 목록에서 삭제한 후 todo 목록에 집어넣기
 const toggleDoneTodo = (e) => {
+  const target = document.getElementById("done-text").innerText;
   deleteDoneItem(e);
-  printTodoItem(e.target.innerText);
+  printTodoItem(target);
 };
 
 init();
