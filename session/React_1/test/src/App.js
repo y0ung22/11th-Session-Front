@@ -11,7 +11,11 @@ function App() {
   };
   return (
     <>
+<<<<<<< HEAD
       <Name />
+=======
+      <Name name="아기사자" nth="11" isFE="true" />
+>>>>>>> 2a8e3037272819fde7b5793e9975e994412c2bcb
       <Counter />
       <Input />
       <hr />
@@ -22,3 +26,7 @@ function App() {
 }
 
 export default App;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2a8e3037272819fde7b5793e9975e994412c2bcb
