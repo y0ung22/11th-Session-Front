@@ -7,8 +7,6 @@ import NavigationBar from "../components/_common/NavigationBar";
 // props로 받아올 posts 구조 분해 할당
 const HomePage = (props) => {
   const { posts } = props;
-  console.log(posts);
-  console.log(posts.id);
   return (
     <Wrapper>
       <NavigationBar />
