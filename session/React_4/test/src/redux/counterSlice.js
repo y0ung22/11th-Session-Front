@@ -27,6 +27,7 @@ export const counterSlice = createSlice({
   },
 });
 
+//export 해줘야 다른 곳에서 받아서 쓸 수 있음, dispatch의 인자로 받아올 수 있는 action값
 export const { initCounter, increase, decrease } = counterSlice.actions;
 
 export default counterSlice.reducer;
