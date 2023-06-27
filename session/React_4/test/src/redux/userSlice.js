@@ -1,18 +1,34 @@
+<<<<<<< HEAD
 import { createSlice } from "@reduxjs/toolkit";
 import { PURGE } from "redux-persist";
 
 //초기값 설정
+=======
+//userSlice
+import { createSlice } from "@reduxjs/toolkit";
+import { PURGE } from "redux-persist";
+
+// 초기값 설정
+>>>>>>> 5f203ca49e4bcc0ca53c9ce0ae58fd33448dac41
 const initialState = {
   userID: "",
   userName: "",
 };
 
 export const userSlice = createSlice({
+<<<<<<< HEAD
   name: "user", //slice 이름
   initialState, //초기값
   //reducer 객체
   reducers: {
     //action과 reducer 로직
+=======
+  name: "user", // slice 이름
+  initialState, // 초기값
+  // reducer 객체
+  reducers: {
+    // aciton과 reducer 로직
+>>>>>>> 5f203ca49e4bcc0ca53c9ce0ae58fd33448dac41
     initUser: (state) => {
       state.userID = initialState.userID;
       state.userName = initialState.userName;
