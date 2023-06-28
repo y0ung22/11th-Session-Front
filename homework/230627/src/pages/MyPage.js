@@ -10,19 +10,25 @@ import book from "../images/book.png";
 import { bookData } from "../_mock/bookData";
 //redux
 import { useDispatch } from "react-redux";
+import { initFilter } from "../redux/filterSlice";
 
 const MyPage = () => {
   const navigate = useNavigate();
   // -----------------------------------------------------------------
   // 문제 1) userName localStorage에서 꺼내서 변수에 저장
-
+  const userName = localStorage.getItem("userName");
   // 문제 2) localStorage 저장 값 삭제, redux 초기화, login 페이지로 이동
   const dispatch = useDispatch();
   const logout = () => {
     // userName, userID 삭제
+    window.localStorage.removeItem("userID");
+    window.localStorage.removeItem("userName");
     // likedList 삭제
+    window.localStorage.removeItem("likedList");
     // filter 초기화
+    dispatch(initFilter());
     // loign 페이지로 이동
+    navigate(`/login`);
   };
   //--------------------------------------------------------------------
   return (
@@ -33,7 +39,7 @@ const MyPage = () => {
           <NameContainer>
             <img src={book} />
             {/* userName 받아오고 나서 아래 주석 해제 */}
-            {/* {userName}님 */}
+            {userName}님
           </NameContainer>
           <LogoutBtn onClick={logout}>로그아웃</LogoutBtn>
           <LikedContainer>

@@ -13,7 +13,11 @@ const LoginPage = () => {
   const [name, setName] = useState();
   //-------------------------------------------------------------------------
   // 문제 1) userEmail, userName 를 key로 id, name 정보를 localStorage에 저장하고 mypage로 이동
-  const saveAccounts = () => {};
+  const saveAccounts = () => {
+    window.localStorage.setItem("userID", id);
+    window.localStorage.setItem("userName", name);
+    navigate(`/mypage`);
+  };
   // ------------------------------------------------------------------------
   return (
     <>

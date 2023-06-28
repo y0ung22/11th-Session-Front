@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { styled } from "styled-components";
 // components
 import AdModal from "../components/AdModal";
@@ -8,6 +9,8 @@ import Book from "../components/Book";
 import category from "../images/category.svg";
 // Data
 import { bookData } from "../_mock/bookData";
+//Redux
+import { filterSlice, setFilter } from "../redux/filterSlice";
 
 const CategoryPage = () => {
   const categories = ["소설", "에세이", "인문"];
@@ -24,11 +27,18 @@ const CategoryPage = () => {
   }, []);
   //--------------------------------------------------
   // 문제 1) 30분 후 만료되는 모달 쿠키를 만들고, modal 닫는 closeModal 함수
-  const closeModal = () => {};
+  const closeModal = () => {
+    document.cookie = "max-age=1800;";
+    document.cookie = "modalCookie=valid";
+    setModal(false);
+  };
   // 문제 2) filterSlice의 filter 받아오기, dispatch 사용 선언
-  const filter = "소설"; // 가짜 코드, 실제 filter 받아오고 삭제해주세요!
+  const { filter } = useSelector((state) => state.filter);
+  const dispatch = useDispatch();
   // 문제 3) dispatch 사용 카테고리 변경 저장하는 saveCategory함수
-  const saveCategory = (e) => {};
+  const saveCategory = (e) => {
+    dispatch(setFilter({ filter: e.target.id }));
+  };
   //----------------------------------------------------
   //선택한 카테고리와 일치하는 bookData만 받아서 (filter 함수 사용) 저장
   const bookList = bookData.filter((book) => book.category == filter);

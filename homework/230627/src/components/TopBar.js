@@ -12,9 +12,18 @@ const TopBar = () => {
   const path = window.location.pathname;
   //----------------------------------------------------
   // 문제 1) userID localStorage에서 받아오기
+  const userID = window.localStorage.getItem("userID");
 
   // 문제 2) path값과 userID 값이 있는지에 따라서 navigate하기
-  const navigator = () => {};
+  const navigator = () => {
+    {
+      path == "/"
+        ? userID
+          ? navigate(`/mypage`)
+          : navigate(`/login`)
+        : navigate(`/`);
+    }
+  };
   //----------------------------------------------------
   return (
     <Wrapper>
