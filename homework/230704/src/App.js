@@ -80,7 +80,7 @@ function App() {
     await axios
       .patch(`${BASE_URL}/blog/${id}`, {
         content: "수정된 내용입니다.",
-        author: "수정한 사람",
+        author: "아기사자",
       })
       .then((response) => {
         setRender(render + 1);
